@@ -1,0 +1,77 @@
+{
+  "name": "npm-package-boilerplate",
+  "version": "0.1.0",
+  "description": "Boilerplate to quick-start the development of a new npm package.",
+  "author": "Jose C. Nunes <jn@josenunes.xyz> (https://josenunes.xyz/)",
+  "license": "MIT",
+  "homepage": "https://github.com/jcmnunes/npm-package-boilerplate#readme",
+  "bugs": {
+    "url": "https://github.com/jcmnunes/npm-package-boilerplate/issues"
+  },
+  "main": "commonjs/index.js",
+  "module": "esm/index.js",
+  "files": [
+    "commonjs",
+    "esm",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "start": "react-scripts start",
+    "clean": "rm -rf commonjs && rm -rf esm",
+    "build:app": "react-scripts build",
+    "build-commonjs": "BABEL_ENV=commonjs babel src/lib --out-dir commonjs --source-maps inline",
+    "build-esm": "BABEL_ENV=esm babel src/lib --out-dir esm --source-maps inline",
+    "build": "npm run clean && npm run build-commonjs && npm run build-esm",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "semantic-release": "semantic-release"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jcmnunes/npm-package-boilerplate.git"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/cli": "^7.6.2",
+    "@babel/core": "^7.6.2",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-transform-runtime": "^7.6.2",
+    "@babel/preset-env": "^7.6.2",
+    "@babel/preset-react": "^7.0.0",
+    "babel-plugin-styled-components": "^1.10.6",
+    "babel-preset-react-app": "^9.0.2",
+    "eslint": "^6.4.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.3.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^22.17.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react": "^7.14.3",
+    "prettier": "^1.18.2",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-scripts": "3.1.2",
+    "semantic-release": "^15.13.24"
+  },
+  "peerDependencies": {
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  }
+}
